@@ -8,7 +8,7 @@ A tiny Chrome extension that uses the browser's built-in Prompt API to transform
 
 ## Why
 
-I wanted a hotkey to clean up text I'd copied from PDFs and Slack threads. Chrome's Prompt API (shipping stable in Chrome 145-150) finally makes "local-only AI" practical for this without asking users to install Ollama or anything else. This is an experiment with that API before it goes mainstream. Small enough to be a finished thing, technically interesting enough to be worth writing up.
+I wanted a hotkey to clean up text I'd copied from PDFs and Slack threads. Chrome's Prompt API, stable for extensions in Chrome 138+, finally makes "local-only AI" practical for this without asking users to install Ollama or anything else. This is an experiment with that API before the model ships broadly. Small enough to be a finished thing, technically interesting enough to be worth writing up.
 
 ## Install
 
@@ -25,13 +25,13 @@ I wanted a hotkey to clean up text I'd copied from PDFs and Slack threads. Chrom
 - **Right-click** on selected text: "Transform with Caret"
 - **Toolbar icon**: opens with clipboard
 
-Pick a transform from the list (or write a custom one), watch it stream, the result is auto-copied to your clipboard.
+Pick a transform from the list (or write a custom one) and watch it stream. The result auto-copies to your clipboard.
 
 ## Setup
 
 Chrome's Prompt API requires a few things:
 
-1. Chrome 138 or newer (Stable is fine from Chrome 145+; earlier versions need Dev/Canary)
+1. Chrome 138 or newer (Stable channel works as long as the flags below are enabled)
 2. ~22 GB free disk space (the model is ~4 GB but Chrome reserves headroom)
 3. GPU with >4 GB VRAM, or 16+ GB RAM with a 4+ core CPU
 4. Enable two flags:
@@ -58,9 +58,8 @@ The whole thing is around 1000 lines of code. The interesting file is [`src/lib/
 
 ## Blog post
 
-I wrote about [building this against Chrome's Prompt API](https://www.ahmedalbarghouti.com/works/caret). What worked, what's still rough, what the on-device AI tier means for browser extensions going forward.
+I wrote about [building this against Chrome's Prompt API](https://www.ahmedalbarghouti.com/projects/caret). What worked, what's still rough, what the on-device AI tier means for browser extensions going forward.
 
 ## License
 
 MIT. Do whatever you want with it.
-# Caret
